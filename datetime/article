@@ -1,0 +1,85 @@
+Dates and Times with pandas.DatetimeIndex
+
+Introduction.
+
+When working with data, one task that we might have to deal with often is manipulation of dates and times. The format provided in the dataset may not always be in a format we can easily use in the various tasks required. Transforming from that format into one that can be easily used is something that forms a core part of the preparatory work needed to be performed on a dataset.
+
+In this article, we shall explore the use of the Pandas method DatetimeIndex in transforming date data into a format we can use for further exploration. You can view the notebook from which this article was derived at ...
+
+Import Pandas and read in the data. We shall use the kiva loans dataset. We shall use just a subset of the columns.
+
+
+Say you want to parse the funded_time column and get the different portions of the date (second, minute, hour, day, month, year). You could use regular text processing to do this (similar to the methods in this article...), or you could use the Pandas DatetimeIndex function. In this article, we shall use the DatetimeIndex function.
+
+If you explore the data types of the various columns, you will find that the funded_time column has the object data type.
+
+
+First we need to convert the values in that column into a datetime object. For that we use the pandas.to_datetime method.
+
+
+When you now check it after performing this operation, you will see that the funded_time column is now of type datetime.
+
+
+We can now proceed to process this column using the DatetimeIndex. Check out the documentation... for more details.
+
+Before processing all the rows, let us first pick out one instance of a timestamp and use that to walk through the various methods (denoted by parenthesis () after the name) and attributes.
+
+
+Date
+date() returns just the date portion of the time stamp.
+
+Year
+year returns the year.
+is_year_starttests to see if it is the first day of the year.
+is_year_end tests to see if it is the last day of the year.
+is_leap_year tests to see if it is a leap year.
+
+Quarter
+quarter returns the quarter number of the year.
+is_quarter_start tests to see if it is the first day of the quarter.
+is_quarter_end tests to see if it is the last day of the quarter.
+
+Month
+month returns the month number.
+month_name() returns the name of the month.
+is_month_start tests to see if it is the first day of the month.
+is_month_end tests to see if it is the last day of the month.
+
+Day
+day returns the date in the month.
+day_name() returns the name of the day.
+dayofweek returns the ordinal position of the day in a week. Monday is considered the first, with an ordinal position of 0.
+dayofyear returns the number of the day in the year.
+daysinmonth returns the number of days in that month.
+
+Times
+Time
+time() returns just the time portion of the time stamp.
+
+Hour
+hour returns the hour of the day.
+
+Minute
+minute returns the minute of the hour.
+
+Second
+second returns the second of the minute.
+
+Normalize
+normalize() this converts all times to midnight. It is useful in cases where the time does not matter, and all you are interested in is the date.
+
+Timezones
+tz returns the timezone of the timestamp.
+
+tz_convert converts the timestamp into one of the specified timezone. Provide the new timezone as Continent/City
+
+You may wonder as to the lack of methods/attributes for the week. The two attributes mentioned in the documentation are week and weekofyear, but they are marked as deprecated, thus won't be discussed in this article.
+
+
+Data Processing
+
+Now that we have seen some of the attributes and methods of `DatetiemIndex`, let us use them in processing our data.
+
+​
+
+First, let us generate new columns containing
