@@ -1,6 +1,7 @@
 import pandas as pd
 
 import streamlit as st
+import streamlit_analytics
 
 import plotly.express as px
 import matplotlib.pyplot as plt
@@ -75,20 +76,20 @@ fig_monthly_average = px.bar(df_average, x="month", y="monthly_average", title="
             hover_data=["year"], facet_col="year",
             labels={"monthly_average":"Monthly Average","month":""})
     
-
-#Displaying the elements
-tl_left, tl_center, tl_right = st.beta_columns((1,4,1))
-with tl_center:
-    st.markdown("## Illustrating pandas.DatetimeIndex via Kiva Funding")
-    st.dataframe(df.sample(10))
+with streamlit_analytics.track():
+    #Displaying the elements
+    tl_left, tl_center, tl_right = st.beta_columns((1,4,1))
+    with tl_center:
+        st.markdown("## Illustrating pandas.DatetimeIndex via Kiva Funding")
+        st.dataframe(df.sample(10))
     
-left_column, center_column, right_column = st.beta_columns(3)
-center_column.markdown("### Annual Funded Amount in Millions")
+    left_column, center_column, right_column = st.beta_columns(3)
+    center_column.markdown("### Annual Funded Amount in Millions")
     
-left_container, center_container, right_container = st.beta_columns((1,2,1))
+    left_container, center_container, right_container = st.beta_columns((1,2,1))
 
-with center_container:
-    st.pyplot(fig)
+    with center_container:
+        st.pyplot(fig)
 
-st.plotly_chart(fig_highest_daily, use_container_width=True)
-st.plotly_chart(fig_monthly_average, use_container_width=True)
+    st.plotly_chart(fig_highest_daily, use_container_width=True)
+    st.plotly_chart(fig_monthly_average, use_container_width=True)
