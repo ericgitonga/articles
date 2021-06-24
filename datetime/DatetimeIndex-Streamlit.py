@@ -10,10 +10,7 @@ import seaborn as sns
 sns.set_theme(style="darkgrid")
 st.set_page_config(layout="wide")
 
-df = pd.read_csv("data/kiva_loans.csv", usecols=[1,13])
-df.dropna(inplace=True)
-df.reset_index(drop=True,inplace=True)
-df = df[["funded_amount", "funded_time"]]
+df = pd.read_csv("dt_kiva.csv")
 
 df["funded_time"] = pd.to_datetime(df["funded_time"])
 df.set_index("funded_time",inplace=True)
