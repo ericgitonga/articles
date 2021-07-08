@@ -1,0 +1,16 @@
+CREATE TABLE movement(
+	id varchar(10),
+	Speed real,
+	Time real
+);
+
+INSERT INTO movement VALUES ('C0132', 94.32, 3.51);
+INSERT INTO movement VALUES ('C5070', 106.66, 1.32);
+INSERT INTO movement VALUES ('C2145', 44.01, 0.54);
+INSERT INTO movement VALUES ('C4974', 54.26, 0.92);
+INSERT INTO movement VALUES ('C2967', 78.92, 2.37);
+INSERT INTO movement VALUES ('C0104', 100.11, 4.87);
+INSERT INTO movement VALUES ('C3603', 34.23, 2.93);
+INSERT INTO movement VALUES ('C9014', 69.69, 3.45);
+INSERT INTO movement VALUES ('C0296', 50.01, 0.21);
+INSERT INTO movement VALUES ('C7046', 112.85, 2.06);
