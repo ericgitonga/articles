@@ -1,1 +1,1 @@
-# Repository of code and writings used for Medium articles
+# Repository of code and writings used for articles
