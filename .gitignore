@@ -6,3 +6,4 @@ audio/
 video/
 visidata/
 part*
+__pycache__/
