@@ -2,8 +2,14 @@
 # coding: utf-8
 
 import pandas as pd
+import tkinter as tk
+from tkinter import filedialog as fd
 
 # Read in the data as a multi-hierarchical dataframe
+root = tk.Tk()
+file = fd.askopenfile()
+root.destroy()
+
 df = pd.read_excel("../data/mock-up.xlsx", header=[0,1])
 df.head(2)
 
@@ -78,4 +84,4 @@ df_final["date"] = pd.to_datetime(df_final["date"])
 df_final["date"] = df_final["date"].apply(lambda x: x.strftime("%b-%d"))
 
 # Finally we write the dataframe to file.
-df_final.to_excel("../data/wc.xlsx",index=False)
+df_final.to_excel("../data/worlds census.xlsx",index=False)
