@@ -12,5 +12,5 @@ lib/
 share/
 pyvenv.cfg
 .spyproject/
-.streamlit/config.toml
-.streamlit/secrets.toml
+config.toml
+secrets.toml
