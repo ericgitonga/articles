@@ -7,3 +7,7 @@ video/
 visidata/
 part*
 __pycache__/
+bin/
+lib/
+share/
+pyvenv.cfg
