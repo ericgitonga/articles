@@ -11,3 +11,6 @@ bin/
 lib/
 share/
 pyvenv.cfg
+.spyproject/
+.streamlit/config.toml
+.streamlit/secrets.toml
