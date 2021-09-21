@@ -9,6 +9,7 @@ Created on Tue Sep 14 07:29:23 2021
 import streamlit as st
 import boto3
 import uuid
+from cam import capture_image
 
 image_file = st.sidebar.file_uploader("Upload image")
 
@@ -29,3 +30,6 @@ if image_file is not None:
     with col2:
         st.markdown("## Image From S3")
         st.image(s3_url + out_file + ".jpg")
+
+if st.sidebar.button("Capture webcam image"):
+    image_file = capture_image()
