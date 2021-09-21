@@ -16,12 +16,13 @@ def capture_image():
         st.write("Webcam inactive")
 
     frame_count = 0
-    while(frame_count <= 2):
+    while(frame_count < 26):
         frame_count += 1
         ret, frame = opencam.read()
-        image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+#        if frame_count == 2:
+        read_image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         break
-
     opencam.release()
     cv2.destroyAllWindows()
-    return image
+
+    return read_image
