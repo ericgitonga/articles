@@ -19,7 +19,6 @@ def capture_image():
     while(frame_count < 26):
         frame_count += 1
         ret, frame = opencam.read()
-#        if frame_count == 2:
         read_image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         break
     opencam.release()
