@@ -20,7 +20,9 @@ def capture_image():
         ret, frame = opencam.read()
         frame_count += 1
         if frame_count == 50:
+            output_image = frame
             break
 
     opencam.release()
     cv2.destroyAllWindows()
+    return output_image
