@@ -19,11 +19,11 @@ with streamlit_analytics.track():
     image_file = st.sidebar.file_uploader("Upload image")
 
 
-    if st.sidebar.button("Capture webcam image"):
-        read_image = capture_image()
-        buffer_image = io.BytesIO()
-        Image.fromarray(read_image).save(buffer_image, format="JPEG")
-        image_file = io.BytesIO(buffer_image.getvalue())
+#    if st.sidebar.button("Capture webcam image"):
+#        read_image = capture_image()
+#        buffer_image = io.BytesIO()
+#        Image.fromarray(read_image).save(buffer_image, format="JPEG")
+#        image_file = io.BytesIO(buffer_image.getvalue())
 
     if image_file is not None:
         col1, col2 = st.columns(2)
