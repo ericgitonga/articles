@@ -9,7 +9,6 @@ Created on Tue Sep 14 07:29:23 2021
 import streamlit as st
 import streamlit.components.v1 as components
 import json
-import tqdm.auto as tqdm
 import streamlit_analytics
 import boto3
 import uuid
